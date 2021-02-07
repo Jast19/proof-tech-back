@@ -14,17 +14,17 @@ import java.util.List;
 @Service
 public class ProcessService {
 
-    public String[] getListFile(MultipartFile file) throws MudanzaException {
+    public String[] getListFile(MultipartFile file) {
         try {
             String content = new String(file.getBytes());
             return content.split("\n");
         } catch (IOException e) {
-            throw new MudanzaException(e.getMessage());
+            throw new MudanzaException(e.getMessage(), e);
         }
 
     }
 
-    public List<Integer> parseIntList(String[] elements) throws FileWithoutNumbersException {
+    public List<Integer> parseIntList(String[] elements) {
         List<Integer> list = new LinkedList<>();
         for (int i = 0; i < elements.length; i++) {
             try {
