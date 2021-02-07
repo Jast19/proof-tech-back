@@ -14,6 +14,9 @@ public class DataUtil {
     public static String[] ELEMENT_STRING_FAIL = {"1", "a", "3"};
     public static String RESPONSE_SUCCESS = "Case #1: 2\n" + "Case #2: 1\n"
             + "Case #3: 2\n" + "Case #4: 3\n" + "Case #5: 8\n";
+
+    public static String RES = "\"Case #1: 2\\nCase #2: 1\\nCase #3: 2\\nCase #4: 3\\nCase #5: 8\\n\"";
+
     public static String RESPONSE_FAIL = "{[]\n\t\24\765}";
 
     public static MultipartFile multipartFile() {
@@ -41,7 +44,7 @@ public class DataUtil {
         logExecution.setDate(new Date());
         logExecution.setId(1L);
         logExecution.setDocument("1091");
-        logExecution.setTravels(null);
+        logExecution.setTravels("{[]\n\t\24\765}");
         return logExecution;
     }
 
